@@ -13,7 +13,7 @@ from . import sync
 print_console_local_rank0_only = True
 
 def print_log(*console_info):
-    local_rank = sync.get_rank('local')
+    local_rank = 0#sync.get_rank('local')
     if print_console_local_rank0_only and (local_rank!=0):
         return
     console_info = [str(i) for i in console_info]

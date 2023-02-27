@@ -250,6 +250,7 @@ class vd_inference(object):
             cfgm = model_cfg_bank()('vd_four_flow_v1-0')
         else:
             assert False, 'Model type not supported'
+        # print(cfgm)
         net = get_model()(cfgm)
 
         if fp16:
@@ -579,7 +580,7 @@ class vd_inference(object):
         return input_save, imout
 
 # vd_inference = vd_dummy()
-vd_inference = vd_inference(which='v1.0', fp16=True)
+vd_inference = vd_inference(which='v1.0', fp16=False)
 
 #################
 # sub interface #
